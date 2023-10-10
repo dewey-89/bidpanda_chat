@@ -9,14 +9,22 @@ spring:
     hibernate:
       ddl-auto: update
       naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
     properties:
       hibernate:
         show_sql: true
         format_sql: true
         use_sql_comments: true
+    defer-datasource-initialization: true # <- sql init 추가
+  sql:
+    init:
+      mode: never # <- sql init 추가
 
   data:
     mongodb:
       uri: ${MONGO_DB_URL}
       database: bid_chat
+
+
+server:
+  port: 8081

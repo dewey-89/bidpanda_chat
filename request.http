@@ -1,0 +1,7 @@
+### 내 채팅방 목록 조회
+
+GET http://localhost:8081/chat/room/my?memberId=1
+
+### ws 연결 요청 HandShake 요청
+GET http://localhost:8081/ws/chat
+
